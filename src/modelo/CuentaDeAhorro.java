@@ -9,11 +9,8 @@ package modelo;
  *
  * @author gusta
  */
-public class CuentaDeAhorro {
-    int numerodecuenta;
-        String cliente;
-        double saldo=0;
-        public double saldo2;
+
+public class CuentaDeAhorro extends CuentaBasica  {
         double tasaInteres= 0.3287;
         public double Interes;
         public double comision;
@@ -22,49 +19,19 @@ public class CuentaDeAhorro {
         double retiro;
         public double Interes2;
         public double comision2;
+        public double saldo2;
+        private double saldo;
+        private double tasaDeInteres;
+        private double comisionPorSaldo;
 
-
-    
-
-        public void CuentaDeAhorro (int numerodecuenta, String Cliente, int saldo)
-        {
-            this.numerodecuenta=numerodecuenta;
-            this.cliente=Cliente;
-        }
+    public CuentaDeAhorro(int numeroDeCuenta, String cliente,int saldo) {
         
-        public double getSaldo()
-        {
-            return this.saldo;
-        }
-                
-        public double depositar(double deposito)
-        {
-            this.cantidad=deposito;
-            saldo= saldo + cantidad;
-            return saldo;
-        }
+        super( numeroDeCuenta, cliente,saldo);
+       
+    }
 
-        public boolean retirar (double retirar)
-         {
-            boolean xSaldo=true;
-            this.retiro=retirar;
-            if(retiro<=saldo)
-            {
-                saldo=saldo-retiro;
-                xSaldo=true;
-            }
-            else
-            {
-                if (retiro>saldo)
-                {
-                    xSaldo=false;
-                }
 
-            }
-            return xSaldo;
 
-        }
-        
         public double calcularInteres (double periodo)
         {
             Interes= (tasaInteres*saldo)/100;
@@ -112,3 +79,6 @@ public class CuentaDeAhorro {
         }
 
 }
+
+
+

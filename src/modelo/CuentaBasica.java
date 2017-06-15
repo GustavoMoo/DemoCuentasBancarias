@@ -13,7 +13,7 @@ public class CuentaBasica {
     
  private int numeroDeCuenta; 
     private String cliente=null;
-    private double saldo;
+    double saldo;
     private double cantidad;
     private double retiro;
 

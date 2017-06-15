@@ -66,7 +66,7 @@ public class Main {
         if(menu==4)
              
         {
-         CuentaDeAhorro micuenta2 = new CuentaDeAhorro();   
+         CuentaDeAhorro micuenta2 = new CuentaDeAhorro(0,"Gustavo",0);   
             
         do
         {
