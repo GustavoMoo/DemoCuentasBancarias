@@ -8,6 +8,7 @@ package DemoCuentasBancarias;
 import java.util.Scanner;
 import modelo.CuentaBasica;
 import modelo.CuentaDeAhorro;
+import modelo.CuentaDeCheques;
 
 /**
  *
@@ -25,6 +26,7 @@ public class Main {
                 
         int menu;
         int menu2;
+        int menu3;
         
         do
         {       
@@ -33,7 +35,9 @@ public class Main {
         System.out.println("2.- Deposito");
         System.out.println("3.- Retirar");
         System.out.println("4.- Cuenta de Ahorro");
-        System.out.println("5.- Salir");
+        System.out.println("5.- Cuenta de cheques");
+        System.out.println("6.- Salir");
+        
 
         menu=entrada.nextInt();
         
@@ -139,17 +143,89 @@ public class Main {
                         }
 
                     }
-                }  
+                } 
+             if(menu==4)
+             
+        {
+         CuentaDeCheques micuenta3 = new CuentaDeCheques(0,"Gustavo",0);   
             
+       do
+                     {
+                      System.out.println("Seleccione una Opcion");
+                      System.out.println("1.-Consulta de Saldo");
+                      System.out.println("2.- Retiro");
+                      System.out.println("3.- Comision Por Cheques Emitidos");
+                      System.out.println("4.- Comision Por Cheques Rebotados ");
+                      System.out.println("5.- Corte Mensual");
+                      System.out.println("6.- Salir");
+                     menu3=entrada.nextInt();
+                       if (menu3 == 1)
+                       {
+                     System.out.println("El saldo de la Cuenta es de: "+ micuenta.getSaldo()); 
+                     
+                       }
+                     else
+                     {
+                      if(menu3==2)
+                     {      
+                     double retirar;
+                     System.out.println("Ingresa la cantidad a Retirar: $");
+                     retirar=entrada.nextDouble();
+                     micuenta.retirar(retirar);
+                     
+                     }
+                     else
+                     {
+                      if(menu3==3)
+                          
+                      {
+                          System.out.println("La Comision Por los Cheques Emitidos es $ : " + micuenta3.chequesEmitidos);
+                      }
+                     else
+                       {
+                          if(menu3==4)
+                           {
+                              System.out.println("La Comision Por los Cheques Rebotados es $ : " + micuenta3.chequesRebotados);
+                           }
+                          
+                          else
+                          {
+                              if(menu3==5)
+                              {
+                                   {
+                                      System.out.println("Este es el corte de los ultimos 30 dias");
+                                      micuenta3.CorteMensual();
+                                      System.out.println("Saldo Actual: $" + micuenta.getSaldo());
+                                      System.out.println("Cheques Emitidos : " + micuenta3.chequesEmitidos);
+                                      System.out.println("Comision por Cheques Emitidos : " + micuenta3.chequesEmitidos);
+                                      System.out.println("Cheques Rebotados : " + micuenta3.chequesRebotados);
+                                      System.out.println("Comision por Cheques Rebotados : " + micuenta3.chequesRebotados);
+                                      System.out.println("Nuevo Saldo: $" + micuenta3.saldo2);
+                                    }
+                              }                             
+                          }
+                       }                         
+                  }                                
+              }     
+            }
+            while (menu3 != 6);
+                    }
+
+        
          }while (menu2 != 7); 
         }
         
-        }while (menu != 5);
-        
-        
+        }while (menu != 6);
         
     }
-    }
+        }
+        
+
+        
+        
+       
+    
+    
 
                 
             
